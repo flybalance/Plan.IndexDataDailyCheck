@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Receivers>
+    <Receiver>
+      <Name>秦雪</Name>
+      <EmailAddr>qinx@mysteel.com</EmailAddr>
+    </Receiver>
+    <Receiver>
+      <Name>刘骊蓉</Name>
+      <EmailAddr>liulr@mysteel.com</EmailAddr>
+    </Receiver>
+    <Receiver>
+      <Name>孙慧</Name>
+      <EmailAddr>sunh@mysteel.com</EmailAddr>
+    </Receiver>
+    <Receiver>
+      <Name>敖翔</Name>
+      <EmailAddr>aox@mysteel.com</EmailAddr>
+    </Receiver>
+    <Receiver>
+      <Name>覃雪</Name>
+      <EmailAddr>tanx@mysteel.com</EmailAddr>
+    </Receiver>
+  </Receivers>
+  <Sender>
+    <Host>smtp.exmail.qq.com</Host>
+    <UserName>system@mysteel.com</UserName>
+    <Password>Asd@2018</Password>
+  </Sender>
+</Configuration>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData">
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+
+  <schedule>
+    <job>
+      <!--job名称-->
+      <name>IndexDataDailyCheckJob</name>
+      <!--job分组-->
+      <group>IndexDataDailyCheckGroup</group>
+      <!--描述-->
+      <description>每日检查指标数据是否成功入库</description>
+      <!--job方法所在命名空间.方法所在类，方法所在类-->
+      <job-type>Plan.IndexDataDailyCheck.ScheduleJob.IndexDataDailyCheckJob,Plan.IndexDataDailyCheck</job-type>
+      <!--true：始终保留在Quartz的JobStore中；false:如果未关联trigger则移除-->
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <!--复杂任务触发器-->
+    <trigger>
+      <cron>
+        <!--trigger名称-->
+        <name>IndexDataDailyCheckTrigger</name>
+        <!--trigger分组-->
+        <group>IndexDataDailyCheckTriggerGroup</group>
+        <!--描述-->
+        <description>每日检查指标数据是否成功入库定时执行触发器</description>
+        <!--绑定的job名称-->
+        <job-name>IndexDataDailyCheckJob</job-name>
+        <!--绑定的job组-->
+        <job-group>IndexDataDailyCheckGroup</job-group>
+        <!--当设置start-time属性的值早于当前时间时，任务启动会立即执行一次，然后根据cron表达式执行，否则只根据cron表达式的值来定时执行-->
+        <!--<start-time>2015-01-22T00:00:00+08:00</start-time>-->
+        <!--0 0 4 * * ? -->
+        <!--每天凌晨4点定时执行-->
+        <cron-expression>0 0 4 * * ?</cron-expression>
+      </cron>
+    </trigger>
+  </schedule>
+</job-scheduling-data>
